@@ -1,6 +1,5 @@
 import vk
 
-
 APP_ID = -1  # чтобы получить app_id, нужно зарегистрировать своё приложение на https://vk.com/dev
 
 
@@ -25,8 +24,13 @@ def get_online_friends(login, password):
 def output_friends_to_console(friends_online):
     pass
 
-if __name__ == '__main__':
+
+def main():
     login = get_user_login()
     password = get_user_password()
     friends_online = get_online_friends(login, password)
     output_friends_to_console(friends_online)
+
+
+if __name__ == '__main__':
+    main()
