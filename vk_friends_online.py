@@ -1,12 +1,9 @@
 import sys
+from getpass import getpass
 
 import vk
 
 APP_ID = -1  # чтобы получить app_id, нужно зарегистрировать своё приложение на https://vk.com/dev
-
-
-def get_user_password():
-    pass
 
 
 def get_online_friends(login, password):
@@ -29,7 +26,11 @@ def main():
     if not login:
         sys.exit('Login is empty')
 
-    password = get_user_password()
+    password = getpass(prompt='Enter password: ')
+
+    if not password:
+        sys.exit('Password is empty')
+
     friends_online = get_online_friends(login, password)
     output_friends_to_console(friends_online)
 
