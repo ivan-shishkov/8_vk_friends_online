@@ -3,7 +3,7 @@ from getpass import getpass
 
 import vk
 
-APP_ID = -1  # чтобы получить app_id, нужно зарегистрировать своё приложение на https://vk.com/dev
+APP_ID = 6475461
 
 
 def get_online_friends(login, password):
