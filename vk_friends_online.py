@@ -17,6 +17,7 @@ def get_online_friends(login, password):
 
     friends_online_ids = api.friends.getOnline()
 
+    return api.users.get(user_ids=friends_online_ids)
 
 
 def output_friends_to_console(friends_online):
