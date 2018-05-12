@@ -33,6 +33,8 @@ def print_friends_online(friends_online):
 
 
 def main():
+    print('Enter your VK credentials:')
+
     user_login = input('Enter login: ')
 
     if not user_login:
