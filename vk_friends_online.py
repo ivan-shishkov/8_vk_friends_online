@@ -5,11 +5,11 @@ import vk
 from vk.exceptions import VkAuthError
 
 
-def get_friends_online_info(application_id, login, password):
+def get_friends_online_info(application_id, user_login, user_password):
     session = vk.AuthSession(
         app_id=application_id,
-        user_login=login,
-        user_password=password,
+        user_login=user_login,
+        user_password=user_password,
         scope='friends',
     )
     api = vk.API(session, v='5.74')
@@ -46,8 +46,8 @@ def main():
     try:
         friends_online = get_friends_online_info(
             application_id=6475461,
-            login=user_login,
-            password=user_password,
+            user_login=user_login,
+            user_password=user_password,
         )
     except VkAuthError:
         sys.exit('Incorrect login or password')
