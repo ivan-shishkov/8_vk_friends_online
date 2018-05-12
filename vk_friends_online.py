@@ -21,7 +21,12 @@ def get_online_friends(login, password):
 
 
 def output_friends_to_console(friends_online):
-    pass
+    print('{:-<30}'.format(''))
+    print('{:^30}'.format('Your VK Friends Online:'))
+    print('{:-<30}'.format(''))
+
+    for friend in sorted(friends_online, key=lambda item: item['first_name']):
+        print('{} {}'.format(friend['first_name'], friend['last_name']))
 
 
 def main():
