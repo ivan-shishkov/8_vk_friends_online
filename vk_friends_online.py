@@ -7,7 +7,7 @@ from vk.exceptions import VkAuthError
 APP_ID = 6475461
 
 
-def get_online_friends(login, password):
+def get_friends_online_info(login, password):
     session = vk.AuthSession(
         app_id=APP_ID,
         user_login=login,
@@ -21,7 +21,7 @@ def get_online_friends(login, password):
     return api.users.get(user_ids=friends_online_ids)
 
 
-def output_friends_to_console(friends_online):
+def print_friends_online(friends_online):
     print('{:-<30}'.format(''))
     print('{:^30}'.format('Your VK Friends Online:'))
     print('{:-<30}'.format(''))
@@ -46,11 +46,11 @@ def main():
         sys.exit('Password is empty')
 
     try:
-        friends_online = get_online_friends(login, password)
+        friends_online = get_friends_online_info(login, password)
     except VkAuthError:
         sys.exit('Incorrect login or password')
 
-    output_friends_to_console(friends_online)
+    print_friends_online(friends_online)
 
 
 if __name__ == '__main__':
