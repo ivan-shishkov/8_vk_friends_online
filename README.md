@@ -1,6 +1,6 @@
 # Watcher of Friends Online
 
-[TODO. There will be project description]
+This script allows to watch for your friends in social network Vkontakte (who is online)
 
 # How to Install
 
