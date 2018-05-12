@@ -33,21 +33,21 @@ def print_friends_online(friends_online):
 
 
 def main():
-    login = input('Enter login: ')
+    user_login = input('Enter login: ')
 
-    if not login:
+    if not user_login:
         sys.exit('Login is empty')
 
-    password = getpass(prompt='Enter password: ')
+    user_password = getpass(prompt='Enter password: ')
 
-    if not password:
+    if not user_password:
         sys.exit('Password is empty')
 
     try:
         friends_online = get_friends_online_info(
             application_id=6475461,
-            login=login,
-            password=password,
+            login=user_login,
+            password=user_password,
         )
     except VkAuthError:
         sys.exit('Incorrect login or password')
