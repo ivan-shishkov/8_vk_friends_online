@@ -42,6 +42,9 @@ def main():
 
     password = getpass(prompt='Enter password: ')
 
+    if not password:
+        sys.exit('Password is empty')
+
     try:
         friends_online = get_online_friends(login, password)
     except VkAuthError:
