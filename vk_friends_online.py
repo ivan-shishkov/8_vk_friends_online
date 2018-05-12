@@ -26,6 +26,10 @@ def output_friends_to_console(friends_online):
     print('{:^30}'.format('Your VK Friends Online:'))
     print('{:-<30}'.format(''))
 
+    if not friends_online:
+        print('You have no friends online')
+        return
+
     for friend in sorted(friends_online, key=lambda item: item['first_name']):
         print('{} {}'.format(friend['first_name'], friend['last_name']))
 
