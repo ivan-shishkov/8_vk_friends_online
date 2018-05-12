@@ -2,6 +2,7 @@ import sys
 from getpass import getpass
 
 import vk
+from vk.exceptions import VkAuthError
 
 APP_ID = 6475461
 
@@ -37,10 +38,11 @@ def main():
 
     password = getpass(prompt='Enter password: ')
 
-    if not password:
-        sys.exit('Password is empty')
+    try:
+        friends_online = get_online_friends(login, password)
+    except VkAuthError:
+        sys.exit('Incorrect login or password')
 
-    friends_online = get_online_friends(login, password)
     output_friends_to_console(friends_online)
 
 
