@@ -6,10 +6,7 @@ from vk.exceptions import VkAuthError
 
 
 def get_friends_online_info(
-        application_id,
-        user_login,
-        user_password,
-        api_version='5.74'):
+        application_id, user_login, user_password, api_version='5.74'):
     session = vk.AuthSession(
         app_id=application_id,
         user_login=user_login,
